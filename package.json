@@ -1,0 +1,30 @@
+{
+  "name": "infodesign-mcp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "bundle-client": "esbuild src/client-entry.ts --bundle --outfile=dist/client-bundle.js --format=iife --platform=browser",
+    "copy-assets": "cp src/templates.json dist/templates.json",
+    "build": "tsc && npm run bundle-client && npm run copy-assets",
+    "start": "node dist/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@antv/infographic": "^0.2.5",
+    "@modelcontextprotocol/sdk": "^1.25.1",
+    "esbuild": "^0.27.2",
+    "jsdom": "^27.4.0",
+    "puppeteer": "^24.34.0"
+  },
+  "devDependencies": {
+    "@types/jsdom": "^27.0.0",
+    "@types/node": "^25.0.3",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}
